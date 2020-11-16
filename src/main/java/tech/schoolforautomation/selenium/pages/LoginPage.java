@@ -1,4 +1,4 @@
-package tech.schoolforautomation.pages;
+package tech.schoolforautomation.selenium.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,14 +21,18 @@ public class LoginPage extends BasePage {
     @FindBy(id = "submit")
     private WebElement submitButton;
 
-    public LoginPage(WebDriver webDriver) {
+    @FindBy(id = "error")
+    private WebElement errorMessage;
+
+    public LoginPage(final WebDriver webDriver) {
         super(webDriver);
-        PageFactory.initElements(webDriver, this);
+
+        PageFactory.initElements(getWebDriver(), this);
     }
 
     public void login(String username, String password) {
-        usernameInput.sendKeys(username);
-        passwordInput.sendKeys(password);
-        submitButton.click();
+        getUsernameInput().sendKeys(username);
+        getPasswordInput().sendKeys(password);
+        getSubmitButton().click();
     }
 }

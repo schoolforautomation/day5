@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Sign Up Page Test Suite" verbose="2" parallel="true">
+
+    <test name="Enroll Me Test">
+        <classes>
+            <class name="tech.schoolforautomation.tests.signup.EnrollMeTest"/>
+        </classes>
+    </test>
+
+</suite>
